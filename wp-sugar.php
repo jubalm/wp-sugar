@@ -3,7 +3,7 @@
 Plugin Name: WP-Sugar
 Plugin URI: http://www.projectassistant.org
 Description: Wordpress SugarCRM Integration
-Version: 1.0
+Version: 1.0.1
 Author: Jubal Mabaquiao
 Author URI: http://jubalm.github.com
 */
@@ -309,10 +309,11 @@ function wp_sugar_create_lead( $entry, $form ) {
     // build $data   
     $data[$sugar_field_id] = $entry[$field["id"]];
     
-    // todo: better filter?  
-    $data = array_filter($data);
   
   }
+
+  // todo: better filter?  
+  $data = array_filter($data);
 
   $sugar = new SugarCRMWebServices();
   $sugar->login(); 
